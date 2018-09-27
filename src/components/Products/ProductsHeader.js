@@ -15,7 +15,7 @@ class ProductsHeader extends Component {
           </nav>
           <div className="logo">
             <Link to="/" className="logo-link">
-              <span className="hide-content">I love lamp</span>
+              <span className="hide-content">Project Congo</span>
               <div className="big-logo" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 596 54">
                   <path fill="currentColor" d="M41.6,48.1V6.3h4.7v41.8H41.6z" />

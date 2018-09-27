@@ -2,10 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import HeaderNav from '../global/HeaderNav';
-import * as Header from '../../assets/img/headers/header.png';
 
 var HeaderStyle = {
-  backgroundImage: `url(${Header})`,
   backgroundRepeat: 'no-repeat',
   backgroundAttachment: 'scroll',
   backgroundPosition: 'center',
@@ -19,9 +17,9 @@ const HomeHeader = props => (
 
     <div className="header-container">
       <div className="content">
-        <h1>I love carpet. I love desk.</h1>
+        <h1>Welcome to Your Store</h1>
         <Link to="/products" className="btn">
-          I love lamp
+          Products
         </Link>
       </div>
     </div>

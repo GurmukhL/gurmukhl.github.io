@@ -7,9 +7,9 @@ const NavMenu = () => (
       <li className="pushy-link">
         <Link to="/products">Products</Link>
       </li>
-      <li className="pushy-link">
-        <Link to="/styles">Styles</Link>
-      </li>
+      {/* <li className="pushy-link">
+                <Link to="/styles">Styles</Link>
+            </li> */}
     </ul>
   </nav>
 );

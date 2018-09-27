@@ -1,16 +1,16 @@
 import React, { Fragment } from 'react';
-import MailingList from './MailingList';
+// import MailingList from './MailingList'
 
 const Footer = () => (
   <Fragment>
-    <MailingList />
+    {/* <MailingList /> */}
 
     <footer className="push">
       <div className="content">
         <div className="footer-content">
           <div className="footer-about">
             <div className="footer-header">
-              <span className="hide-content">I love lamp</span>
+              <span className="hide-content">Project Congo</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512.25684 46.73779"
