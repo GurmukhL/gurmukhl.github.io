@@ -19,7 +19,7 @@ const NotFound = () => (
         </div>
       </section>
     </main>
-    <Footer />
+    {/* <Footer /> */}
   </div>
 );
 

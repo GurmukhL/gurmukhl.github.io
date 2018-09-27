@@ -11,14 +11,14 @@ class TopPicks extends Component {
     var TopPicksToMap = [];
 
     var collections = this.props.collections.collections.data;
-
+    console.log(collections);
     var productData = this.props.products.products.data;
 
     let TopPicks;
 
     try {
       TopPicks = collections.find(collections => {
-        return collections.slug === 'top_picks';
+        return collections.slug === 'slug';
       });
     } catch (e) {
       TopPicks = collections[0];
