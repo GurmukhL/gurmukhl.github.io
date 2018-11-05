@@ -12,6 +12,8 @@
   "dependencies": {
     "@moltin/sdk": "^2.3.0",
     "history": "^4.7.2",
+    "mqtt": "^2.18.8",
+    "mqtt-react": "^0.0.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.5",

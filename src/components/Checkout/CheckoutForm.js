@@ -4,8 +4,10 @@ import { Field, reduxForm } from 'redux-form';
 import * as api from '../../moltin';
 import { push } from 'react-router-redux';
 import { connect } from 'react-redux';
-
+import { connect as connectMQTT } from 'mqtt';
 import { SUBMIT_PAYMENT, PAYMENT_COMPLETE } from '../../ducks/payments';
+
+const client = connectMQTT('mqtt://192.168.1.112');
 
 function mapStateToProps(state) {
   return { push: state.push };
@@ -50,6 +52,7 @@ var PaymentTemplate = {
 
 class CheckoutForm extends Component {
   handleKeyDown = function(e) {
+    console.log('POTATO');
     if (e.key === 'Enter' && e.shiftKey === false) {
       e.preventDefault();
     }
@@ -75,8 +78,21 @@ class CheckoutForm extends Component {
     CheckoutTemplate.shipping_address.county = values.shipping_postcode;
     CheckoutTemplate.shipping_address.country = values.shipping_country;
 
+    console.log('SUBMIT');
+    client.on('connect', () => {
+      console.log('sent_message');
+      client.subscribe('dev/test');
+      client.publish('potato', 'TEST_MESSAGE');
+    });
+
+    client.on('message', (topic, message) => {
+      console.log(message.toString());
+      client.end();
+    });
+
     this.props.dispatch(dispatch => {
       dispatch({ type: SUBMIT_PAYMENT });
+      // dispatch({ type: PAYMENT_COMPLETE })
     });
 
     api
@@ -135,4 +151,5 @@ CheckoutForm = reduxForm({
   form: 'CheckoutForm'
 })(CheckoutForm);
 
+// export const Subscribed = subscribe({ topic: 'dev/test'})(CheckoutForm)
 export default connect(mapStateToProps)(CheckoutForm);

@@ -12,8 +12,10 @@ import OrderConfirmationContainer from './Orders/OrderConfirmationContainer';
 import NotFound from './global/NotFound';
 // import MobileNav from './global/Mobile/MobileNav';
 import Footer from './global/Footer';
+// import { Connector } from 'mqtt-react'
 
 const App = props => (
+  // <Connector mqttprops="172.16.1.191">
   <div>
     {/* <MobileNav /> */}
 
@@ -37,6 +39,7 @@ const App = props => (
 
     {/* <Footer /> */}
   </div>
+  // </Connector>
 );
 
 export default App;
