@@ -18,6 +18,18 @@
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <link rel="stylesheet" type="text/css" media="screen" href="./style.min.css">
     <script src="%PUBLIC_URL%/js/production.min.js"></script>
+    <!-- <script src="./browserMqtt.js"></script>
+    <script>
+      var client = mqtt.connect('ws://192.168.1.112','') // you add a ws:// url here
+      client.subscribe("dev/test")
+    
+      client.on("message", function (topic, payload) {
+        alert([topic, payload].join(": "))
+        client.end()
+      })
+    
+      client.publish("web/test", "hello world!")
+    </script> -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,400italic,500,600,700" rel="stylesheet" type="text/css">
     <title>Project Congo</title>
   </head>
