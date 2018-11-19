@@ -79,11 +79,9 @@ class CheckoutForm extends Component {
     CheckoutTemplate.shipping_address.country = values.shipping_country;
 
     console.log('CHECKED_OUT');
-    // client.publish('dev/test','hello it me')
 
     this.props.dispatch(dispatch => {
       dispatch({ type: SUBMIT_PAYMENT });
-      // dispatch({ type: PAYMENT_COMPLETE })
     });
 
     api
