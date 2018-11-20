@@ -15,7 +15,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case SUBMIT_PAYMENT:
-      client.publish('dev/test', '3');
+      client.publish('dev/test', JSON.stringify(...state));
 
       return { ...state, processing: true, complete: false };
 
