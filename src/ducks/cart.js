@@ -37,7 +37,7 @@ export default (state = initialState, action) => {
       };
 
     case FETCH_CART_SEND:
-      client.publish('dev/test', JSON.stringify(_.find(state.cart, 'cart')));
+      client.publish('dev/test', JSON.stringify(_.get(state, 'cart')));
 
       return {
         ...state,
