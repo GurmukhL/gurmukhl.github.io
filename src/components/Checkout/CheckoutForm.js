@@ -82,6 +82,7 @@ class CheckoutForm extends Component {
     console.log('CHECKED_OUT');
 
     this.props.dispatch(dispatch => {
+      dispatch({ type: SUBMIT_PAYMENT });
       dispatch({ type: FETCH_CART_SEND });
     });
 

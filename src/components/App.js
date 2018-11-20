@@ -10,15 +10,10 @@ import SingleProductContainer from './Products/SingleProductContainer';
 import OneClickCheckout from './Checkout/OneClickCheckout';
 import OrderConfirmationContainer from './Orders/OrderConfirmationContainer';
 import NotFound from './global/NotFound';
-// import MobileNav from './global/Mobile/MobileNav';
 import Footer from './global/Footer';
-// import { Connector } from 'mqtt-react'
 
 const App = props => (
-  // <Connector mqttprops="172.16.1.191">
   <div>
-    {/* <MobileNav /> */}
-
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/cart" component={Cart} />
