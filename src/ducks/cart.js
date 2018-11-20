@@ -5,6 +5,7 @@ const client = connectMQTT('ws://localhost:9001/mqtt');
 export const FETCH_CART_START = 'cart/FETCH_CART_START';
 export const FETCH_CART_END = 'cart/FETCH_CART_END';
 export const CART_UPDATED = 'cart/CART_UPDATED';
+export const FETCH_CART_SEND = 'cart/FETCH_CART_SEND';
 
 const initialState = {
   cart: null,
@@ -26,6 +27,15 @@ export default (state = initialState, action) => {
       };
 
     case FETCH_CART_END:
+      return {
+        ...state,
+        cart: action.payload,
+        fetched: true,
+        fetching: false,
+        newQuantity: action.gotNew
+      };
+
+    case FETCH_CART_SEND:
       client.publish('dev/test', JSON.stringify(state));
 
       return {
@@ -53,6 +63,11 @@ export const fetchCartStart = () => ({
 
 export const fetchCartEnd = cart => ({
   type: FETCH_CART_END,
+  payload: cart
+});
+
+export const fetchCartSend = cart => ({
+  type: FETCH_CART_SEND,
   payload: cart
 });
 
