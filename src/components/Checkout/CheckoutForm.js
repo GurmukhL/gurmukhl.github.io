@@ -6,6 +6,7 @@ import { push } from 'react-router-redux';
 import { connect } from 'react-redux';
 // import { connect as connectMQTT } from 'mqtt'
 import { SUBMIT_PAYMENT, PAYMENT_COMPLETE } from '../../ducks/payments';
+import { FETCH_CART_END } from '../../ducks/cart';
 
 // const client = connectMQTT('ws://192.168.1.19:9001/mqtt')
 
@@ -81,7 +82,7 @@ class CheckoutForm extends Component {
     console.log('CHECKED_OUT');
 
     this.props.dispatch(dispatch => {
-      dispatch({ type: SUBMIT_PAYMENT });
+      dispatch({ type: FETCH_CART_END });
     });
 
     api

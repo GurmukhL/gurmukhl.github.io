@@ -1,6 +1,6 @@
-import { connect as connectMQTT } from 'mqtt';
+// import { connect as connectMQTT } from 'mqtt';
 
-const client = connectMQTT('ws://localhost:9001/mqtt');
+// const client = connectMQTT('ws://localhost:9001/mqtt');
 
 export const SUBMIT_PAYMENT = 'payments/SUBMIT_PAYMENT';
 export const PAYMENT_COMPLETE = 'payments/PAYMENT_COMPLETE';
@@ -15,7 +15,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case SUBMIT_PAYMENT:
-      client.publish('dev/test', JSON.stringify(...state));
+      // client.publish('dev/test', JSON.stringify(...state));
 
       return { ...state, processing: true, complete: false };
 
