@@ -1,4 +1,5 @@
 import { connect as connectMQTT } from 'mqtt';
+import _ from 'lodash';
 
 const client = connectMQTT('ws://localhost:9001/mqtt');
 
@@ -36,7 +37,7 @@ export default (state = initialState, action) => {
       };
 
     case FETCH_CART_SEND:
-      client.publish('dev/test', JSON.stringify(state));
+      client.publish('dev/test', JSON.stringify(_.find(state.cart, 'cart')));
 
       return {
         ...state,
