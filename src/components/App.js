@@ -4,13 +4,11 @@ import { Switch, Route } from 'react-router-dom';
 import Home from './Home/Home';
 import Cart from './Cart/Cart';
 import CheckoutContainer from './Checkout/CheckoutContainer';
-import StylesContainer from './Styles/StylesContainer';
 import ProductsContainer from './Products/ProductsContainer';
 import SingleProductContainer from './Products/SingleProductContainer';
 import OneClickCheckout from './Checkout/OneClickCheckout';
 import OrderConfirmationContainer from './Orders/OrderConfirmationContainer';
 import NotFound from './global/NotFound';
-import Footer from './global/Footer';
 
 const App = props => (
   <div>
@@ -31,10 +29,7 @@ const App = props => (
       />
       <Route path="*" component={NotFound} />
     </Switch>
-
-    {/* <Footer /> */}
   </div>
-  // </Connector>
 );
 
 export default App;

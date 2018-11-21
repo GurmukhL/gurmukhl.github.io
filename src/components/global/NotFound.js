@@ -2,7 +2,6 @@ import React from 'react';
 
 import CartHeader from '../Cart/CartHeader';
 import MobileNav from '../global/Mobile/MobileNav';
-import Footer from './Footer';
 
 const NotFound = () => (
   <div className="broken-body">
@@ -19,7 +18,6 @@ const NotFound = () => (
         </div>
       </section>
     </main>
-    {/* <Footer /> */}
   </div>
 );
 
