@@ -37,11 +37,12 @@ export default (state = initialState, action) => {
       };
 
     case FETCH_CART_SEND:
-      client.publish('dev/test', JSON.stringify(_.get(state.cart, 'data')));
+      let cart_text = _.get(state.cart, 'data');
+      let cartItems = _.map(cart_text, 'sku');
+      client.publish('dev/test', JSON.stringify(cartItems));
 
       return {
         ...state,
-        cart: action.payload,
         fetched: true,
         fetching: false,
         newQuantity: action.gotNew
