@@ -40,7 +40,7 @@ export default (state = initialState, action) => {
       let cart_text = _.get(state.cart, 'data');
       let cart_item = _.map(cart_text, 'sku').join(', ');
 
-      client.publish('website_incoming', JSON.stringify(cart_item));
+      client.publish('website_incoming', cart_item);
 
       return {
         ...state,
