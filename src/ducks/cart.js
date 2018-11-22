@@ -38,8 +38,9 @@ export default (state = initialState, action) => {
 
     case FETCH_CART_SEND:
       let cart_text = _.get(state.cart, 'data');
-      let cartItems = _.map(cart_text, 'sku');
-      client.publish('dev/test', JSON.stringify(cartItems));
+      let cart_item = _.map(cart_text, 'sku').join(', ');
+
+      client.publish('website_incoming', JSON.stringify(cart_item));
 
       return {
         ...state,

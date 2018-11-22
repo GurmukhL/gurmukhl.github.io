@@ -15,7 +15,6 @@ const App = props => (
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/cart" component={Cart} />
-      {/* <Route path="/styles" component={StylesContainer} /> */}
       <Route path="/products" component={ProductsContainer} />
       <Route path="/checkout" component={CheckoutContainer} />
       <Route
