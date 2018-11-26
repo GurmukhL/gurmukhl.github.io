@@ -40,20 +40,8 @@ var CheckoutTemplate = {
     country: 'United Kingdom'
   }
 };
-var PaymentTemplate = {
-  gateway: 'stripe',
-  method: 'purchase',
-  first_name: 'John',
-  last_name: 'Doe',
-  number: '4242424242424242',
-  month: '08',
-  year: '2020',
-  verification_value: '123'
-};
-
 class CheckoutForm extends Component {
   handleKeyDown = function(e) {
-    // console.log('POTATO')
     if (e.key === 'Enter' && e.shiftKey === false) {
       e.preventDefault();
     }
@@ -86,32 +74,11 @@ class CheckoutForm extends Component {
       dispatch({ type: FETCH_CART_SEND });
     });
 
-    api
-      .Checkout(CheckoutTemplate)
-
-      .then(order => {
-        api.OrderPay(order.data.id, PaymentTemplate);
-        api.DeleteCart();
-      })
-
-      .then(() => {
-        this.props.dispatch(dispatch => {
-          dispatch({ type: PAYMENT_COMPLETE });
-          dispatch(push('/order-confirmation'));
-        });
-      })
-
-      .catch(e => {
-        console.log(e);
-      })
-
-      .catch(e => {
-        console.log(e);
-      })
-
-      .catch(e => {
-        console.log(e);
-      });
+    this.props.dispatch(dispatch => {
+      dispatch({ type: PAYMENT_COMPLETE });
+      api.DeleteCart();
+      dispatch(push('/order-confirmation'));
+    });
   };
 
   render() {
@@ -128,7 +95,7 @@ class CheckoutForm extends Component {
               noValidate
               onSubmit={this.props.handleSubmit(this.mySubmit)}>
               <button type="submit" className="pay">
-                Checkout
+                SUBMIT
               </button>
             </form>
           </div>

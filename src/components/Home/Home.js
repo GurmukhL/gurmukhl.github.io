@@ -3,9 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import HomeHeader from './HomeHeader';
-import HomeMainSection from './HomeMainSection';
 import MobileNav from '../global/Mobile/MobileNav';
-import Loading from '../global/Loading';
 
 import { GetProducts } from '../../ducks/products';
 import { GetCategories } from '../../ducks/categories';
@@ -49,7 +47,6 @@ class Home extends Component {
         <div>
           <MobileNav />
           <HomeHeader />
-          <HomeMainSection />
         </div>
       );
     } else {
@@ -57,7 +54,6 @@ class Home extends Component {
         <div>
           <MobileNav />
           <HomeHeader />
-          <Loading />
         </div>
       );
     }

@@ -17,15 +17,16 @@ const HomeHeader = props => (
 
     <div className="header-container">
       <div className="content">
-        <h1>Welcome to Your Store</h1>
+        <h1>
+          <span role="img" aria-label="waving-hand">
+            👋
+          </span>
+        </h1>
+        <h1> Welcome!</h1>
         <Link to="/products" className="btn">
           Products
         </Link>
       </div>
-    </div>
-
-    <div className="down-arrow" aria-hidden="true">
-      <span className="arrow"> &#10095; </span>
     </div>
   </header>
 );

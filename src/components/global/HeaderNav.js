@@ -7,7 +7,6 @@ const HeaderNav = () => (
   <div className="nav-container">
     <nav className="primary-nav light">
       <Link to="/products">Products</Link>
-      {/* <Link to="/styles">Styles</Link> */}
     </nav>
     <div className="logo light">
       <Link to="/" className="logo-link">
@@ -19,10 +18,7 @@ const HeaderNav = () => (
             alt="Project Congo Logo"
             aria-hidden="true"
           />
-          <h3>Project Congo</h3>
-        </div>
-        <div className="small-logo" aria-hidden="true">
-          <h3>Project Congo</h3>
+          <h3 style={{ color: 'white' }}>Project Congo</h3>
         </div>
       </Link>
     </div>
